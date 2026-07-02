@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BARE</title>
+
+<style>
+:root {
+    --primary-color: #ff6b9d;
+    --primary-light: #f8a5c2;
+    --bg-color: #fff8fa;
+    --text-color: #333333;
+    --white: #ffffff;
+    --card-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+    --price-color: #e84393;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+header{
+    background: var(--primary-light);
+    color: var(--white);
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    background: var(--primary-color);
+    text-align:center;
+    padding:15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a{
+    color: var(--white);
+    text-decoration:none;
+    margin: 0 20px;
+    font-weight:bold;
+    transition: var(--transition-speed);
+}
+
+nav a:hover{
+    color:#ffeaa7;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 300%; 
+    height: 100%;
+    animation: slideAnimation 12s infinite ease-in-out; 
+}
+
+.slide {
+    width: 33.333%; 
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.slide1 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://bare-official.com/uploads/sliders/images-1768558648391-568459847.webp'); }
+.slide2 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://bare-official.com/uploads/sliders/images-1768563297612-880256083.webp'); }
+.slide3 { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://bare-official.com/uploads/sliders/images-1768623855826-487467867.webp'); }
+
+.hero-text {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+@keyframes slideAnimation {
+    0%, 25% { transform: translateX(0); }          
+    33%, 58% { transform: translateX(-33.333%); }  
+    66%, 91% { transform: translateX(-66.666%); }  
+    100% { transform: translateX(0); }              
+}
+
+section{
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color: var(--primary-color);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card{
+    background: var(--white);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card h3{
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.card p{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+/* តម្លៃផលិតផល និង ប៊ូតុងទិញ */
+.price-tag {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--price-color);
+    margin-bottom: 10px;
+}
+
+.buy-btn {
+    display: block;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: var(--transition-speed);
+}
+
+.buy-btn:hover {
+    background: var(--primary-light);
+}
+
+/* ៥. Contact Form */
+.contact{
+    text-align:center;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.contact-form button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-speed);
+}
+
+.contact-form button:hover {
+    background: var(--primary-light);
+}
+
+footer{
+    background: var(--primary-color);
+    color: var(--white);
+    text-align:center;
+    padding:15px;
+}
+
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-slider {
+        height: 350px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav a {
+        margin: 5px 0;
+    }
+    .products {
+        grid-template-columns: 1fr;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    .hero-slider {
+        height: 280px;
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>BARE</h1>
+    <p>BEAUTY BEGINS HERE-DISCOVER, CREATES, GLOW HIGH QUALITY, SUITABLE PRICE, UNIQUE.</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="payment.html">Contact</a>
+</nav>
+
+<div id="home" class="hero-slider">
+    <div class="slider-wrapper">
+        <div class="slide slide1">
+            <div class="hero-text">
+                <a href="#products" class="btn">BEAUTY</a>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="hero-text">
+                <a href="#products" class="btn">CONFIDENT</a>
+            </div>
+        </div>
+        <div class="slide slide3">
+            <div class="hero-text">
+                <a href="#products" class="btn">BARE</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p style="text-align:center; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+        At BARE, we craft high-quality beauty essentials designed to enhance your natural glow.
+        From our BARE Creamy Blush and BARE Shimmer Blush Powder that add a soft, radiant flush to your cheeks,
+        to our BARE CICA Sunscreen that protects and nourishes your skin every day, each product is made with pure,
+        skin-loving ingredients suitable for all skin types.
+    </p>
+</section>
+<section id="products">
+    <h2>Featured Products</h2>
+    <div class="products">
+        
+        <div class="card">
+            <img src="https://bare-official.com/uploads/products/image-1769497311380-436758948.webp" alt="Facial Cleanser">
+            <div class="card-content">
+                <h3>BARE SHIMMER BLUSH POWDER</h3>
+                <div class="price-tag">$12.00</div>
+                <a href="payment.html" class="buy-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://bare-official.com/uploads/products/image-1769497144081-632746436.webp" alt="Moisturizer">
+            <div class="card-content">
+                <h3>BARE Creamy Blush</h3>
+                <div class="price-tag">$12.00</div>
+                <a href="payment.html" class="buy-btn">Buy Now</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://bare-official.com/uploads/products/image-1769497243832-916358364.webp" alt="Brightening Serum">
+            <div class="card-content">
+                <h3>BARE CICA SUNSCREEN</h3>
+                <div class="price-tag">$20.00</div>
+                <a href="payment.html" class="buy-btn">Buy Now</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
